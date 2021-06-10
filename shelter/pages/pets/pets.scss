@@ -1,0 +1,399 @@
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6;
+$color-light-xl: #FFFFFF;
+$color-dark-s: #CDCDCD;
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #292929;
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+$footer-gradient-background: url(../../assets/noise_transparent.png),
+ radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
+ #211F20;
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}  
+
+@mixin h2 {
+    font: {
+        family: Georgia;
+        size: 4.4rem;
+        weight: 400;
+    }
+    line-height: 130%;
+}
+@mixin h3 {
+    font: {
+        family: Georgia;
+        style: normal;
+        weight: normal;
+        size: 3.5rem;
+    }
+    line-height: 130%;
+    letter-spacing: 0.21rem;
+}
+@mixin h4 {
+    font: {
+        family: Georgia;
+        style: normal;
+        weight: normal;
+        size: 2rem;
+    }
+    line-height: 115%;
+    letter-spacing: 0.12rem;
+}
+@mixin h5 {
+    font: {
+        family: Georgia;
+        style: normal;
+        weight: normal;
+        size: 1.5rem;
+    }
+    line-height: 110%;
+    letter-spacing: 0.09rem; 
+}
+@mixin paragraph-l {
+    font: {
+        family: Arial;
+        size: 1.5rem;
+    }
+    line-height: 160%;
+}
+@mixin paragraph-s {
+
+    font: {
+        family: Arial;
+        style: italic;
+        weight: normal;
+        size: 1.2rem;
+    }
+    line-height: 150%;
+}
+@mixin logo_title {
+    font: {
+        family: Georgia;
+        style: normal;
+        weight: normal;
+        size: 3.2rem;
+     }
+    line-height: 110%;
+    letter-spacing: 0.19rem;
+    
+}
+@mixin logo_subtitle {
+    font: {
+        family: Arial;
+        size: 1.3rem;
+
+    } 
+    letter-spacing: 0.1rem;
+    
+}
+:root{
+    font-size: 10px;
+}
+
+body {
+    margin: 0px;
+}
+/*======================header=========================*/
+.header {
+    width: 1280px;
+    // position: absolute;
+    height: 120px;
+    // top: 33px;
+
+    &__wrapper {
+        height: 120px;
+        display: flex;
+        margin: 0 auto;
+        max-width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 46px;
+        margin-top: 2px;
+
+      &__logo {
+
+        height: 59px;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+
+        &__title h1{
+            color: $color-dark-l;
+            @include logo_title;
+        
+            
+        }
+        
+        &__subtitle{
+            color: $color-dark-l;
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 15px;
+            display: flex;
+            text-align: center;
+            letter-spacing: 0.1em;
+            margin-top: 10px; 
+            margin-left: 4px;
+           
+        }
+    
+      }
+       
+      &__menu{
+        height: 60px;
+        width: 443px;
+        display: flex;
+        z-index: 1;
+
+        &__list  {
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            padding-top: 12px;
+
+            &__item {
+                @include paragraph-l;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                &__item-link{
+                    cursor: pointer;
+                    color: $color-dark-l;
+                    font-family: Arial;
+                    font-size: 15px;
+                    line-height: 160%;
+                }
+
+                &__item-link:hover{
+                    cursor: pointer;
+                    color: $color-dark-3xl;
+                }
+
+                &__item-link{
+                    cursor: pointer;
+                    color: $color-dark-l;
+                    font-family: Arial;
+                    font-size: 15px;
+                    line-height: 160%;
+                }
+                &__link_active{
+                    cursor: pointer;
+                    color: $color-dark-3xl;
+                    border-bottom: solid 3px $color-primary;
+                }
+                &__link_disabled {
+                    cursor: pointer;
+                    color: $color-dark-l ;
+                }
+            }
+         }  
+      }
+   }
+}
+
+/*===============friends==================*/
+
+.friends {
+    width: 1280px;
+    height: 1342px;
+    display: flex;
+    justify-content: center;
+    background-color: $color-light-l;
+
+    &__wrapper{
+        width: 1200px;
+        height: 1162px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 80px;
+        margin-left: 12px;
+
+
+        &__title{
+            @include h3;
+            color: $color-dark-l;
+            width: 400px;
+            height: 90px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        &__slider{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            height: 930px;
+            justify-content: space-between;
+
+            &__card{
+            background: $color-light-s;
+            border-radius: 9px;
+            width: 270px;
+            height: 435px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 17px;
+
+             &__button{
+                display: flex;
+                align-items: center;
+                font-family: Georgia;
+                height: 52px;
+                width: 193px;
+                padding: 15px 45px;
+                border-radius: 100px;
+                border: 2px solid #F1CDB3;
+                background-color: $color-light-s;
+                font-size: 17px;
+                line-height: 221px;
+                letter-spacing: 0.06em;
+                margin-bottom: 30px;
+             }
+             &__button:hover{
+                background-color: $color-primary-light;
+                cursor: pointer;
+             }
+
+             & p {
+                font-family: Georgia;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 23px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                letter-spacing: 0.06em;
+             }
+            }
+            &__card:hover{
+                background-color: $color-light-xl;
+            }
+        }
+
+        &__slider-buttons{
+            width: 340px;
+            height: 52px;
+            display: flex;
+            justify-content: space-between;
+
+            &__button{
+                width: 52px;
+                height: 52px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #F1CDB3;
+                border-radius: 100px;
+                @include h4;
+            }
+
+            &__button__centr {
+                background-color: $color-primary;
+            }
+
+            &__button-inactive:disabled {
+                border: 2px solid #CDCDCD;
+            }
+
+            &__button:hover{
+                background-color: $color-primary;
+                border: 2px solid #F1CDB3;
+                cursor: pointer;
+
+            }
+        }  
+    }
+}
+
+/*=====================footer=================*/
+
+.footer {
+    background: $footer-gradient-background;
+    width: 1280px;
+    height: 350px;
+    display: flex;
+    align-items: flex-end;
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 1200px;
+        max-width: 1200px;
+        height: 310px;
+        margin-left: 46px;
+
+        &__content {
+            width: 300px;
+            height: 274px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-bottom: 40px;
+
+         &__title {
+            @include h3;
+         }
+
+         &__href {
+            @include h4;
+            text-decoration: none;
+            color: $color-primary;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 244px;
+
+            &__email {
+                margin-left: 20px;
+            }
+
+            &__phone {
+                margin-right: 5px;
+            }
+
+            &__street{
+                margin-left: 20px;
+            }
+
+            &__park {
+                margin-right: 30px;
+                margin-bottom: 5px;
+            }
+         }
+         &__href:hover{
+             color: $color-primary-light;
+         }
+
+         &__map-href {
+            width: 300px;
+        }
+      }
+    }
+}
+
+
+ 
+
+
