@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dis/reset.css">
+		<link rel="stylesheet" href="dis/reveal.css">
+		<link rel="stylesheet" href="dis/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal" style="background: url('examples/assets/molekuly-bliki-svyazi.jpg') no-repeat center; height: 100%;
+		color: rgb(1, 243, 243);">
+			<div class="slides">
+				<section>
+					<p>The FileSystem API and File API, a web application can create, read, view and write files and/or directories in a virtual, sandboxed file system.</p>
+				</section>
+				<section>
+					<p style="color: rgb(201, 152, 247);">The API description is divided into the following sections:</p>
+					<ul>
+						<li>Reading and managing files: File / Blob, FileList, FileReader</li>
+						<li>Create & Burn: BlobBuilder, FileWriter</li>
+						<li>Work with directories and access rights:
+							DirectoryReader, FileEntry / DirectoryEntry, LocalFileSystem
+						</li>
+					</ul>
+				</section> 
+				<section>
+				    <p style="color: rgb(201, 152, 247);">Objects for work:</p>
+					<ul>
+						<li>File </li>
+						<li>FileList </li>
+						<li>Blob </li>
+					</ul></section>
+				<section>
+					<p>We can get this object using the following construction:</p>
+					<img style="height: 40px;" src="examples/assets/1.jpg" alt="">
+					<p style="color: rgb(201, 152, 247);">Where:</p>
+					<ul style="font-size: 2rem;">
+						<li>type — storage type of file resources. Can take values TEMPORARY and PERSISTENT;</li>
+						<li>size — file system size (in bytes);</li>
+						<li>onInitFs — a function to be called when the filesystem has been successfully created. Gets an argument - a FileSystem object;</li>
+						<li>onError — function to call on error. The argument is a FileError object.</li>
+					</ul>
+				</section>
+				<section>
+					<p>The file will be created as follows:</p>
+					<img style="height: 100px;" src="examples/assets/creatFile.jpg" alt="">
+					<p style="font-size: 2rem;" >We extract the test.txt file and create a FileWriter object for it. Then we attach the contents to it, creating a new BlobBuilder object and applying the write() method to FileWriter.</p>
+					<img style="height: 250px;" src="examples/assets/reader1.jpg" alt="">
+				</section>
+				<section>
+					<p>Reading is easier. We use the already familiar FileReader:</p>
+					<img style="height: 240px;" src="examples/assets/reading2.jpg" alt="">
+				</section>
+				<section>
+					<p>File deletion:</p>
+					<img style="height: 200px;" src="examples/assets/deletion.jpg" alt="">
+				</section>
+				<section>
+					<p style="font-size: 2rem;">FileEntry and DirectoryEntry share the same methods of copying the API, moving and renaming inputs. Two methods can be used for these operations: copyTo() and moveTo(). They both take the same parameters:</p>
+					<img style="height: 80px;" src="examples/assets/copyMove.jpg" alt="">
+					<p style="font-size: 2rem;">The first parameter is the parent folder for moving/copying input to it. The second is an arbitrary new name given to the moved/copied input, which is actually required when you copy the input in the same folder, otherwise you will have an error. The third and fourth parameters were explained earlier.</p>
+				</section>
+				<section>
+					<p style="color: rgb(201, 152, 247);">For a more detailed study, you can use the links:</p>
+					<ul>
+						<li><a href="http://www.w3.org/TR/file-system-api/">File API: Directories and System</a></li>
+						<li><a href="http://www.w3.org/TR/file-writer-api/">File API: Writer</a></li>
+						<li><a href="http://www.w3.org/TR/file-upload/">File API</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="dis/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
